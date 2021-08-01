@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.example.bean.UserDetails;
 import com.example.repo.UserRepository;
@@ -61,10 +63,7 @@ public String redirectToDelete() {
 
 @PostMapping("/saveuser")
 public String saveData(UserDetails user) {
-	System.out.println("Name : " + user.getName());
-	System.out.println("Email : " + user.getEmail());
-	System.out.println("Contact : " + user.getContact());
-	System.out.println("pwd : " + user.getPwd());
+	
 	repo.save(user);
 	return "home";
 }
@@ -104,12 +103,7 @@ public String updateUser( UserDetails user,String name,String pwd) {
 }
 
 
-@GetMapping("/searchuser")
 
-public String getUserByName(String name) {
-	repo.getByName(name);
-return "search";
-}
 
 
 

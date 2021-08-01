@@ -21,11 +21,10 @@ public interface UserRepository extends JpaRepository<UserDetails, String> {
 @Transactional
 @Query(value="update UserDetails set name=?1 where pwd=?2")
 public void updateUser(String name,String pwd);
-@Modifying
-@Transactional
-@Query("From UserDetails where name=?1")
 
-public void getByName(String name);
+
+
+
 
 
 
