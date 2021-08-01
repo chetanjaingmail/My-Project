@@ -44,11 +44,7 @@ return "update";
 
 
 
-@GetMapping("/search")
 
-public String redirectToSearch() {
-return "search";
-}
 			
 		
 
